@@ -1,11 +1,12 @@
 import React from "react";
 
-const Resource = ({resource}) => {
+const Resource = ({ resource }) => {
     return (
         <>
-            <a href={resource.fields.Website}>{resource.fields.Name}</a>
+            <a href={resource.fields.Website}>{resource.fields.Name} {resource.fields.Based}</a>
+            <br />
         </>
-      )
+    )
 }
 
 // Filter only Type Foundries:
@@ -24,6 +25,5 @@ const Resource = ({resource}) => {
 // );
 // };
 
-// Stop code block here
 
 export default Resource

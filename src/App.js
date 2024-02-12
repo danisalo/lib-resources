@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Airtable from 'airtable'
-import Resource from './components/Resource'
+
+import Header from './components/Header';
+import AllResources from './components/AllResources';
+import Footer from './components/Footer';
+
 
 const api_KEY = process.env.REACT_APP_api_KEY;
 const base = new Airtable({ apiKey: `${api_KEY}` }).base('appFDHfzVQYxhaJbL');
@@ -16,9 +20,6 @@ function App() {
       .eachPage((records, fetchNextPage) => {
         setResources(records)
         fetchNextPage();
-        // records.forEach((record) => {
-        //   console.log('Name:', record.get('Name'));
-        // });
       }, (err) => {
         if (err) { console.error(err); return; }
       });
@@ -26,13 +27,16 @@ function App() {
 
   return (
     <>
-      <h1>Project Library</h1>
-      {resources.map(resource => (
-        <Resource
-          key={resource.id}
-          resource={resource}
+      <div class="container text-center">
+        <Header />
+
+        <AllResources
+          resources={resources}
         />
-      ))}
+
+      </div>
+
+      <Footer />
     </>
   );
 }
