@@ -5,12 +5,12 @@ const GenericList = ({ baseName, viewName, title }) => {
 
     const { data, loading } = useAirtableData(baseName, viewName)
 
-    // if (data.length === 0) {
-    //     return null
-    // }
-
-    if (loading && !data.length === 0) {
+    if (loading) {
         return <p>Loading...</p>
+    }
+
+    if (!baseName || data.length === 0) {
+        return null
     }
 
     return (

@@ -11,6 +11,10 @@ a {
   padding: 0;
 }
 
+body {
+  background-color: #fafafa;
+}
+
 img {
   width: 100%;
 }
@@ -53,7 +57,7 @@ ul li a {
 }
 
 ul li a:hover {
-  background-color: #e9e9e9;
+  background-color: #eeeeee;
   padding: 0.25rem 0.5rem;
   transition: 0.25s ease-in-out;
 }
@@ -66,7 +70,7 @@ ul li a:hover {
 .footer-bg a {
   font-size: 0.8rem;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .footer-bg a:hover {

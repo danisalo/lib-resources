@@ -1,24 +1,33 @@
-import { useState, useEffect } from 'react';
-import Airtable from 'airtable';
+import { useState, useEffect } from 'react'
+import Airtable from 'airtable'
 
 const api_KEY = process.env.REACT_APP_api_KEY;
-const base = new Airtable({ apiKey: `${api_KEY}` }).base('appFDHfzVQYxhaJbL');
+const base = new Airtable({ apiKey: `${api_KEY}` }).base('appFDHfzVQYxhaJbL')
 
 const useAirtableData = (baseName, viewName) => {
-
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        base(`${baseName}`)
-            .select({ view: `${viewName}` })
-            .eachPage((records, fetchNextPage) => {
-                setData(records)
-                fetchNextPage()
+        const fetchData = async () => {
+            if (!baseName) {
                 setLoading(false)
-            }, (err) => {
-                if (err) { console.error(err); return }
-            })
+                return;
+            }
+            try {
+                const records = await base(baseName)
+                    .select({ view: viewName })
+                    .firstPage()
+
+                setData(records)
+                setLoading(false)
+            } catch (err) {
+                console.error(err)
+                setLoading(false)
+            }
+        }
+
+        fetchData()
     }, [baseName, viewName])
 
     return { data, loading }

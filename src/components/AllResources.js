@@ -140,6 +140,11 @@ const AllResources = () => {
                         title="Misc"
                     />
                     <GenericList
+                        baseName="Extensions"
+                        viewName="Grid - All by Name"
+                        title="Extensions"
+                    />
+                    <GenericList
                         baseName="Random"
                         viewName="Grid - All by Name"
                         title="Random"
