@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 function App() {
   return (
     <>
-      <div class="container text-center">
+      <div className="container text-center">
         <Header />
         <AllResources />
       </div>

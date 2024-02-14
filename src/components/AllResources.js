@@ -6,9 +6,9 @@ import GenericList from "./GenericList"
 const AllResources = () => {
     return (
         <>
-            <div class="row">
+            <div className="row">
                 {/* Search Engines */}
-                <div class="col-sm-3 col-lg-2 px-1 text-start">
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="SearchEnginesConventional"
                         viewName="Grid - All by Name"
@@ -37,7 +37,7 @@ const AllResources = () => {
                 </div>
 
                 {/* Design */}
-                <div class="col-sm-3 col-lg-2 px-1 text-start">
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="DesignStudios"
                         viewName="Grid - All by Name"
@@ -51,7 +51,7 @@ const AllResources = () => {
                 </div>
 
                 {/* Typography */}
-                <div class="col-sm-3 col-lg-2 px-1 text-start">
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="TypeFoundries"
                         viewName="Grid - All by Name"
@@ -70,8 +70,7 @@ const AllResources = () => {
                 </div>
 
                 {/* Indexing, Building Sites, File Transfering & Workflow */}
-                <div class="col-sm-3 col-lg-2 px-1 text-start">
-                    <h2>Indexing</h2>
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="Indexing"
                         viewName="Grid - All by Name"
@@ -95,8 +94,7 @@ const AllResources = () => {
                 </div>
 
                 {/* Web Practices, Inspo, Libraries & Other Resources */}
-                <div class="col-sm-3 col-lg-2 px-1 text-start">
-                    <h2>Web Practices</h2>
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="WebPractices"
                         viewName="Grid - All by Name"
@@ -130,10 +128,22 @@ const AllResources = () => {
                 </div>
 
                 {/* Misc */}
-                <div class="col-sm-3 col-lg-2 px-1 text-start">
-                    <h2>Experimental</h2>
-                    <h2>Misc</h2>
-                    <h2>Random</h2>
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
+                    <GenericList
+                        baseName="Experimental"
+                        viewName="Grid - All by Name"
+                        title="Experimental"
+                    />
+                    <GenericList
+                        baseName="Misc"
+                        viewName="Grid - All by Name"
+                        title="Misc"
+                    />
+                    <GenericList
+                        baseName="Random"
+                        viewName="Grid - All by Name"
+                        title="Random"
+                    />
                 </div>
 
             </div>

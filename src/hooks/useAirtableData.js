@@ -14,8 +14,8 @@ const useAirtableData = (baseName, viewName) => {
             .select({ view: `${viewName}` })
             .eachPage((records, fetchNextPage) => {
                 setData(records)
-                fetchNextPage();
-                setLoading(false);
+                fetchNextPage()
+                setLoading(false)
             }, (err) => {
                 if (err) { console.error(err); return }
             })

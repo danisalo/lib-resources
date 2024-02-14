@@ -2,13 +2,14 @@ import React from "react"
 import useAirtableData from "../hooks/useAirtableData"
 
 const GenericList = ({ baseName, viewName, title }) => {
+
     const { data, loading } = useAirtableData(baseName, viewName)
 
-    if (!data || data.length === 0) {
-        return null;
-    }
+    // if (data.length === 0) {
+    //     return null
+    // }
 
-    if (loading) {
+    if (loading && !data.length === 0) {
         return <p>Loading...</p>
     }
 
