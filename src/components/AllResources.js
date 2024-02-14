@@ -34,6 +34,11 @@ const AllResources = () => {
                         viewName="Grid - All by Name"
                         title="Image Generators (AI)"
                     />
+                    <GenericList
+                        baseName="FindWork"
+                        viewName="Grid - All by Name"
+                        title="Find Work"
+                    />
                 </div>
 
                 {/* Design */}
@@ -95,6 +100,11 @@ const AllResources = () => {
 
                 {/* Web Practices, Inspo, Libraries & Other Resources */}
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
+                    <GenericList
+                        baseName="Critics"
+                        viewName="Grid - All by Name"
+                        title="Critics (?)"
+                    />
                     <GenericList
                         baseName="WebPractices"
                         viewName="Grid - All by Name"

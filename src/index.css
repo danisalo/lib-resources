@@ -20,13 +20,13 @@ img {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
 h2 {
   color: rgb(0, 0, 255, 1);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .description {
@@ -40,30 +40,34 @@ h2 {
 }
 
 span {
-  /* color: rgb(0, 0, 255, 1); */
   text-decoration: underline;
 }
 
 ul,
-li,
+li {
+  list-style: none;
+  list-style-position: outside;
+}
+
 ul li a {
   color: rgb(0, 0, 0, 1);
   text-decoration: underline;
   font-size: 1rem;
-  list-style: none;
-  list-style-position: outside;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 ul li a:hover {
+  font-weight: 600;
   background-color: #eeeeee;
   padding: 0.25rem 0.5rem;
   transition: 0.25s ease-in-out;
+  border-radius: 0.5rem;
 }
 
 .footer-bg {
   background-color: rgba(0, 0, 0, 0.1);
+
 }
 
 .footer-bg p,
@@ -75,4 +79,12 @@ ul li a:hover {
 
 .footer-bg a:hover {
   color: rgb(0, 0, 0);
+}
+
+.header {
+  background-color: rgb(242, 242, 242);
+  border-radius: 1rem;
+  padding: 1rem 4rem;
+  /* width: fit-content; */
+  margin: 0 auto;
 }

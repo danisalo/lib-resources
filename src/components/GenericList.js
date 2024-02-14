@@ -9,9 +9,9 @@ const GenericList = ({ baseName, viewName, title }) => {
         return <p>Loading...</p>
     }
 
-    if (!baseName || data.length === 0) {
-        return null
-    }
+    // if (!baseName || data.length === 0) {
+    //     return null
+    // }
 
     return (
         <>
@@ -19,7 +19,7 @@ const GenericList = ({ baseName, viewName, title }) => {
             <ul className="mb-2">
                 {data.map((resource) => (
                     < li key={resource.id} >
-                        <a href={resource.fields.Website}>
+                        <a href={resource.fields.Website} target="_blank">
                             {resource.fields.Name && <span>{resource.fields.Name} </span>}
                             {resource.fields.From && <span>{resource.fields.From} </span>}
                             {resource.fields.Based && <span>{resource.fields.Based} </span>}
