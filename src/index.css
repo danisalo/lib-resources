@@ -11,12 +11,25 @@ a {
   padding: 0;
 }
 
+:root {
+  --my-blue-primary: rgb(0, 0, 255);
+  --my-blue-primary-hover: rgb(46, 112, 255);
+}
+
 body {
-  background-color: #fafafa;
+  background-color: var(--bs-gray-100);
 }
 
 img {
   width: 100%;
+}
+
+.header {
+  background-color: var(--bs-gray-200);
+  border-radius: 1rem;
+  padding: 1rem 4rem;
+  /* width: fit-content; */
+  margin: 0 auto;
 }
 
 h1 {
@@ -25,22 +38,39 @@ h1 {
 }
 
 h2 {
-  color: rgb(0, 0, 255, 1);
+  color: var(--my-blue-primary);
   font-size: 1.2rem;
 }
 
 .description {
   font-size: 1rem;
-  font-weight: light;
+}
+
+.underlined-span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.clickable-span {
+  font-size: 1rem;
+  color: var(--bs-body-color);
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .caption {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: light;
 }
 
-span {
-  text-decoration: underline;
+.popup-text {
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: light;
+}
+
+.popup-text span {
+  color: rgba(0, 0, 0, 0.6);
 }
 
 ul,
@@ -50,7 +80,7 @@ li {
 }
 
 ul li a {
-  color: rgb(0, 0, 0, 1);
+  color: var(--bs-body-color);
   text-decoration: underline;
   font-size: 1rem;
   overflow: hidden;
@@ -59,32 +89,120 @@ ul li a {
 
 ul li a:hover {
   font-weight: 600;
-  background-color: #eeeeee;
+  /* background-color: #eeeeee; */
+  background-color: #e9ecef;
   padding: 0.25rem 0.5rem;
   transition: 0.25s ease-in-out;
   border-radius: 0.5rem;
 }
 
 .footer-bg {
-  background-color: rgba(0, 0, 0, 0.1);
-
+  background-color: var(--bs-gray-200);
 }
 
 .footer-bg p,
 .footer-bg a {
   font-size: 0.8rem;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--bs-gray-600);
 }
 
-.footer-bg a:hover {
+.footer-bg a:hover,
+.footer-bg button:hover {
   color: rgb(0, 0, 0);
 }
 
-.header {
-  background-color: rgb(242, 242, 242);
-  border-radius: 1rem;
-  padding: 1rem 4rem;
-  /* width: fit-content; */
-  margin: 0 auto;
+body.modal-open {
+  overflow: hidden;
+}
+
+.open-modal-btn {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.6);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-modal-btn {
+  cursor: pointer;
+}
+
+.open-modal-btn:hover,
+.close-modal-btn:hover {
+  stroke: rgb(0, 0, 0);
+}
+
+.popup-modal {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.375rem;
+  z-index: 100;
+  width: 21rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.popup-modal-header,
+.submission-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.popup-modal-header h2 {
+  padding-bottom: 0.625rem;
+}
+
+.submission-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.3);
+  border-radius: 0.375rem;
+  z-index: 200;
+  width: 26.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-form-inputs {
+  width: 100%;
+}
+
+.my-btn-primary {
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--my-blue-primary);
+  border-color: var(--my-blue-primary);
+  border-radius: 0.5rem;
+}
+
+.my-btn-primary:hover {
+  color: #ffffff;
+  background-color: var(--my-blue-primary-hover);
+  border-color: var(--my-blue-primary-hover);
+}
+
+.my-btn-secondary {
+  font-weight: 600;
+  color: var(--bs-gray-600);
+  background-color: transparent;
+  border-color: transparent;
+  border-radius: 0.5rem;
+}
+
+.my-btn-secondary:hover {
+  color: #000000;
 }

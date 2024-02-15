@@ -74,7 +74,7 @@ const AllResources = () => {
                     />
                 </div>
 
-                {/* Indexing, Building Sites, File Transfering & Workflow */}
+                {/* Indexing, Building Sites, File Transfering, Workflow & Guidelines*/}
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="Indexing"
@@ -96,19 +96,19 @@ const AllResources = () => {
                         viewName="Grid - All by Name"
                         title="Workflow"
                     />
+                    <GenericList
+                        baseName="WebPractices"
+                        viewName="Grid - All by Name"
+                        title="Web Practices"
+                    />
                 </div>
 
-                {/* Web Practices, Inspo, Libraries & Other Resources */}
+                {/* Inspo, Libraries & Other Resources */}
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="Critics"
                         viewName="Grid - All by Name"
                         title="Critics (?)"
-                    />
-                    <GenericList
-                        baseName="WebPractices"
-                        viewName="Grid - All by Name"
-                        title="Web Practices"
                     />
                     <GenericList
                         baseName="UIInspo"
@@ -126,7 +126,7 @@ const AllResources = () => {
                         title="Type Games"
                     />
                     <GenericList
-                        baseName="CreativeJS"
+                        baseName="JSLibraries"
                         viewName="Grid - All by Name"
                         title="Creative JS Libraries"
                     />

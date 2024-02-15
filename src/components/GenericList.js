@@ -1,6 +1,7 @@
 import React from "react"
 import useAirtableData from "../hooks/useAirtableData"
 
+
 const GenericList = ({ baseName, viewName, title }) => {
 
     const { data, loading } = useAirtableData(baseName, viewName)
