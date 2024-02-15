@@ -20,7 +20,7 @@ const GenericList = ({ baseName, viewName, title }) => {
             <ul className="mb-2">
                 {data.map((resource) => (
                     < li key={resource.id} >
-                        <a href={resource.fields.Website} target="_blank">
+                        <a href={resource.fields.Website} target="_blank" rel="noopener noreferrer">
                             {resource.fields.Name && <span>{resource.fields.Name} </span>}
                             {resource.fields.From && <span>{resource.fields.From} </span>}
                             {resource.fields.Based && <span>{resource.fields.Based} </span>}

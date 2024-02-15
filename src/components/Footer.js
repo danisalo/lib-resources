@@ -26,7 +26,7 @@ const Footer = () => {
                             <SubmissionModal isOpen={isModalOpen} onRequestClose={closeModal} />
                         </div>
                         <div className="col text-end">
-                            <a target="_blank" href="https://www.danielsalomonm.com">Site by DS</a>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.danielsalomonm.com">Site by DS</a>
                         </div>
                     </div>
                 </div>
@@ -37,6 +37,3 @@ const Footer = () => {
 
 
 export default Footer
-
-
-{/* <a target="_blank" href="https://www.students.sallythurer.com">Inspo sallythurer.com</a> */ }
