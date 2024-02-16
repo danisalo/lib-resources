@@ -11,32 +11,32 @@ const AllResources = () => {
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="SearchEnginesConventional"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Search Engines (Conventional)"
                     />
                     <GenericList
                         baseName="SearchEnginesAI"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Search Engines (AI)"
                     />
                     <GenericList
                         baseName="SearchEnginesMedia"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Search Engines (Media)"
                     />
                     <GenericList
                         baseName="SearchEnginesInt"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Search Engines (International)"
                     />
                     <GenericList
                         baseName="ImageGenerators"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Image Generators (AI)"
                     />
                     <GenericList
                         baseName="FindWork"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Find Work"
                     />
                 </div>
@@ -45,12 +45,12 @@ const AllResources = () => {
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="DesignStudios"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Design Studios"
                     />
                     <GenericList
                         baseName="Designers"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Designers"
                     />
                 </div>
@@ -59,17 +59,17 @@ const AllResources = () => {
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="TypeFoundries"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Type Foundries"
                     />
                     <GenericList
                         baseName="TypeInspo"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Type Inspo"
                     />
                     <GenericList
                         baseName="TypeMarkets"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Type Marketplaces"
                     />
                 </div>
@@ -78,27 +78,27 @@ const AllResources = () => {
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="Indexing"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Indexing"
                     />
                     <GenericList
                         baseName="BuildSites"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Build Sites"
                     />
                     <GenericList
                         baseName="FileTransfering"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="File Transfering"
                     />
                     <GenericList
                         baseName="Workflow"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Workflow"
                     />
                     <GenericList
                         baseName="WebPractices"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Web Practices"
                     />
                 </div>
@@ -107,32 +107,32 @@ const AllResources = () => {
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="Critics"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Critics (?)"
                     />
                     <GenericList
                         baseName="UIInspo"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="UI Inspo"
                     />
                     <GenericList
                         baseName="FreeAssets"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Free Assets"
                     />
                     <GenericList
                         baseName="TypeGames"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Type Games"
                     />
                     <GenericList
                         baseName="JSLibraries"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Creative JS Libraries"
                     />
                     <GenericList
                         baseName="CSSMix"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="CSS Mix"
                     />
                 </div>
@@ -141,22 +141,27 @@ const AllResources = () => {
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
                         baseName="Experimental"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Experimental"
                     />
                     <GenericList
-                        baseName="Misc"
-                        viewName="Grid - All by Name"
-                        title="Misc"
+                        baseName="MiscUtils"
+                        initialViewName="Grid - All by Name"
+                        title="Misc Utils"
+                    />
+                    <GenericList
+                        baseName="MiscMisc"
+                        initialViewName="Grid - All by Name"
+                        title="Misc Misc"
                     />
                     <GenericList
                         baseName="Extensions"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Extensions"
                     />
                     <GenericList
                         baseName="Random"
-                        viewName="Grid - All by Name"
+                        initialViewName="Grid - All by Name"
                         title="Random"
                     />
                 </div>
