@@ -149,7 +149,7 @@ const ContactForm = ({ isOpen, onRequestClose }) => {
                         required
                     />
                     <small className="form-text text-muted">
-                        Please provide the link of the website.
+                        Provide the link of the website you want to share.
                     </small>
                 </div>
                 <div className="mb-3">

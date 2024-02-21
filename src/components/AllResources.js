@@ -77,6 +77,11 @@ const AllResources = () => {
                 {/* Indexing, Building Sites, File Transfering, Workflow & Guidelines*/}
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
+                        baseName="CoolSites"
+                        initialViewName="Grid - All by Name"
+                        title="Cool Sites"
+                    />
+                    <GenericList
                         baseName="Indexing"
                         initialViewName="Grid - All by Name"
                         title="Indexing"
@@ -101,10 +106,25 @@ const AllResources = () => {
                         initialViewName="Grid - All by Name"
                         title="Web Practices"
                     />
+                    <GenericList
+                        baseName="JSLibraries"
+                        initialViewName="Grid - All by Name"
+                        title="Creative JS Libraries"
+                    />
+                    <GenericList
+                        baseName="CSSMix"
+                        initialViewName="Grid - All by Name"
+                        title="CSS Mix"
+                    />
                 </div>
 
                 {/* Inspo, Libraries & Other Resources */}
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
+                    <GenericList
+                        baseName="SiteAwards"
+                        initialViewName="Grid - All by Name"
+                        title="Site Awards"
+                    />
                     <GenericList
                         baseName="Critics"
                         initialViewName="Grid - All by Name"
@@ -124,16 +144,6 @@ const AllResources = () => {
                         baseName="TypeGames"
                         initialViewName="Grid - All by Name"
                         title="Type Games"
-                    />
-                    <GenericList
-                        baseName="JSLibraries"
-                        initialViewName="Grid - All by Name"
-                        title="Creative JS Libraries"
-                    />
-                    <GenericList
-                        baseName="CSSMix"
-                        initialViewName="Grid - All by Name"
-                        title="CSS Mix"
                     />
                 </div>
 
