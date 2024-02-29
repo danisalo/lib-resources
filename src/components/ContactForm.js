@@ -1,80 +1,3 @@
-// import React, { useRef, useState } from 'react'
-// import emailjs from '@emailjs/browser'
-
-
-// const ContactForm = () => {
-
-//     const form = useRef()
-//     const [submissionMessage, setSubmissionMessage] = useState('')
-
-//     const sendEmail = (e) => {
-//         e.preventDefault()
-
-//         emailjs
-//             .sendForm(`${process.env.REACT_APP_EMAILJS_SERVICE_ID}`,
-//                 `${process.env.REACT_APP_EMAILJS_TEMPLATE_ID}`,
-//                 form.current,
-//                 {
-//                     publicKey: `${process.env.REACT_APP_EMAILJS_PUBLIC_KEY}`,
-//                 }
-//             )
-//             .then(
-//                 () => {
-//                     // console.log('Submission sent!');
-//                     setSubmissionMessage('Submission sent!')
-//                     form.current.reset()
-//                     setTimeout(() => {
-//                         setSubmissionMessage('Thanks for your submission!')
-//                     }, 5000)
-//                 },
-//                 (error) => {
-//                     console.log('FAILED...', error.text)
-//                     setSubmissionMessage('Something went wrong, please try again later.')
-//                     setTimeout(() => {
-//                         setSubmissionMessage('Something went wrong, please try again later.')
-//                     }, 5000)
-//                 }
-//             )
-//     }
-
-//     return (
-//         <>
-//             <form ref={form} onSubmit={sendEmail} className="mt-4">
-//                 <div className="mb-3">
-//                     <label htmlFor="user_email" className="form-label">
-//                         Your Email
-//                     </label>
-//                     <input type="email" className="form-control" id="user_email" name="user_email" />
-//                 </div>
-//                 <div className="mb-3">
-//                     <label htmlFor="user_name" className="form-label">
-//                         The website URL
-//                     </label>
-//                     <input type="text" className="form-control" id="user_name" name="user_name" />
-//                 </div>
-//                 <div className="mb-3">
-//                     <label htmlFor="message" className="form-label">
-//                         Why do you love this website?
-//                     </label>
-//                     <textarea className="form-control" id="message" name="message" rows="4"></textarea>
-//                 </div>
-//                 <button type="submit" className="btn btn-primary">
-//                     Send submission
-//                 </button>
-//                 {submissionMessage && (
-//                     <div className="alert alert-success mt-3" role="alert">
-//                         {submissionMessage}
-//                     </div>
-//                 )}
-//             </form>
-//         </>
-//     )
-// }
-
-
-// export default ContactForm
-
-
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
@@ -186,4 +109,5 @@ const ContactForm = ({ isOpen, onRequestClose }) => {
     );
 };
 
-export default ContactForm;
+
+export default ContactForm

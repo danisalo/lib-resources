@@ -61,5 +61,3 @@ const HelperPopUp = () => {
 
 
 export default HelperPopUp
-
-// Make Category Name a clickable toggle that changes the "view"
