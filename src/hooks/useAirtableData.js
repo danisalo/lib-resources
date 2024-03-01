@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Airtable from 'airtable'
 
-const api_KEY = process.env.REACT_APP_api_KEY;
+const api_KEY = process.env.REACT_APP_AIRTABLE_API_KEY;
 const base = new Airtable({ apiKey: `${api_KEY}` }).base('appFDHfzVQYxhaJbL')
 
 const useAirtableData = (baseName, viewName) => {
