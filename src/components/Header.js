@@ -28,7 +28,7 @@ const Header = () => {
                         &#9734; A curated collection of <span className='underlined-span' onClick={openArchive}>www</span> resources for an enriched online journey. <span className='clickable-span' onClick={openModal}>Ever-evolving.</span> &#9734;
                     </p>
                     <SubmissionModal isOpen={isModalOpen} onRequestClose={closeModal} />
-                    <p className="caption mt-1">Last updated Feb 2024</p>
+                    <p className="caption mt-1">Last updated Mar 2024</p>
                 </div>
             </div >
         </>

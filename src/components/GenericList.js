@@ -14,6 +14,14 @@ const GenericList = ({ baseName, initialViewName, title }) => {
         }
     }
 
+    const addStar = (resource) => {
+        if (resource.fields.Favorite) {
+            return <span> &#9734;</span>
+        } else {
+            return null
+        }
+    }
+
     if (loading) {
         return <p>Loading...</p>
     }
@@ -43,6 +51,7 @@ const GenericList = ({ baseName, initialViewName, title }) => {
                             {resource.fields.Name && <span>{resource.fields.Name} </span>}
                             {resource.fields.From && <span>{resource.fields.From} </span>}
                             {resource.fields.Based && <span>{resource.fields.Based} </span>}
+                            {addStar(resource)}
                         </a>
                     </li>
                 ))}
