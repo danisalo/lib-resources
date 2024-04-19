@@ -1,14 +1,14 @@
 import React, { useState } from "react"
 import GenericList from "./GenericList"
-
+import SearchBar from "./SearchBar"
 
 const AllResources = () => {
 
     const [searchQuery, setSearchQuery] = useState("")
     const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
+    const [viewMode, setViewMode] = useState("list")
 
-    const handleSearch = (event) => {
-        const inputValue = event.target.value
+    const handleSearch = (inputValue) => {
         setSearchQuery(inputValue)
         if (inputValue) {
             setShowFavoritesOnly(false)
@@ -20,39 +20,19 @@ const AllResources = () => {
         setSearchQuery("")
     }
 
+    const toggleViewMode = () => {
+        setViewMode((prevMode) => (prevMode === "list" ? "grid" : "list"));
+    }
+
 
     return (
         <>
             <div className="row align-items-center mb-4">
-                <div className="col-md-5">
+                <div className="col-sm-5 col-lg-4 px-0">
                     {/* Search bar */}
-                    <form className="form-inline">
-                        <div className="input-group search-bar">
-                            <div className="input-group-prepend">
-                                <label htmlFor="searchInput" className="input-group-text">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 512 512"
-                                        fill="rgba(0, 0, 0, 1)"
-                                        width="1.2rem"
-                                        height="1.2rem">
-                                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
-                                    </svg>
-                                </label>
-                            </div>
-                            <input
-                                id="searchInput"
-                                type="text"
-                                placeholder="Search site..."
-                                aria-label="Search bar"
-                                className="form-control"
-                                value={searchQuery}
-                                onChange={handleSearch}
-                            />
-                        </div>
-                    </form >
+                    <SearchBar onSearch={handleSearch} />
                 </div>
-                <div className="col-md-auto">
+                <div className="col-md-auto px-0">
                     <input
                         id="favoritesInput"
                         type="button"
@@ -61,6 +41,9 @@ const AllResources = () => {
                         onClick={handleToggleFavorites}
                     />
                 </div >
+                {/* <button onClick={toggleViewMode}>
+                    {viewMode === "list" ? "Grid" : "List"}
+                </button> */}
             </div >
             <div className="row">
                 {/* Search Engines */}
@@ -154,13 +137,13 @@ const AllResources = () => {
 
                 {/* Indexing, Building Sites, File Transfering, Workflow & Guidelines*/}
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
-                    <GenericList
+                    {/* <GenericList
                         baseName="CoolSites"
                         initialViewName="Grid - All by Name"
                         title="Cool Sites"
                         searchQuery={searchQuery}
                         showFavoritesOnly={showFavoritesOnly}
-                    />
+                    /> */}
                     <GenericList
                         baseName="Indexing"
                         initialViewName="Grid - All by Name"
@@ -215,16 +198,16 @@ const AllResources = () => {
                 {/* Inspo, Libraries & Other Resources */}
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
-                        baseName="SiteAwards"
+                        baseName="Critics"
                         initialViewName="Grid - All by Name"
-                        title="Site Awards"
+                        title="Blogs"
                         searchQuery={searchQuery}
                         showFavoritesOnly={showFavoritesOnly}
                     />
                     <GenericList
-                        baseName="Critics"
+                        baseName="SiteAwards"
                         initialViewName="Grid - All by Name"
-                        title="Critics (?)"
+                        title="Site Awards"
                         searchQuery={searchQuery}
                         showFavoritesOnly={showFavoritesOnly}
                     />
@@ -254,13 +237,6 @@ const AllResources = () => {
                 {/* Misc */}
                 <div className="col-sm-3 col-lg-2 px-1 text-start">
                     <GenericList
-                        baseName="Experimental"
-                        initialViewName="Grid - All by Name"
-                        title="Experimental"
-                        searchQuery={searchQuery}
-                        showFavoritesOnly={showFavoritesOnly}
-                    />
-                    <GenericList
                         baseName="MiscUtils"
                         initialViewName="Grid - All by Name"
                         title="Misc Utils"
@@ -278,6 +254,13 @@ const AllResources = () => {
                         baseName="Extensions"
                         initialViewName="Grid - All by Name"
                         title="Extensions"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="Experimental"
+                        initialViewName="Grid - All by Name"
+                        title="Experimental"
                         searchQuery={searchQuery}
                         showFavoritesOnly={showFavoritesOnly}
                     />

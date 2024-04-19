@@ -102,6 +102,7 @@ ul li a:hover {
 
 .footer-bg {
   background-color: var(--bs-gray-200);
+  margin-bottom: 0;
 }
 
 .footer-bg p,
@@ -181,8 +182,44 @@ body.modal-open {
   align-items: center;
 }
 
-.contact-form-inputs {
+.search-bar {
+  border-bottom: 0.125rem solid var(--bs-gray-200);
+  margin-right: 1.5rem;
+}
+
+.search-input-icon {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 0.125rem;
+}
+
+.search-input {
+  all: unset;
   width: 100%;
+  background-color: transparent;
+  text-align: left;
+  padding: 0.375rem 0.75rem;
+}
+
+.toggle-button {
+  background-color: #ffffff;
+  color: var(--bs-body-color);
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: 2rem;
+  padding: 0.375rem 1rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.toggle-button:hover {
+  background-color: var(--bs-gray-200);
+}
+
+.toggle-button.active {
+  background-color: var(--bs-gray-200);
+  border: var(--bs-border-width) solid var(--bs-gray-200);
+
 }
 
 .my-btn-primary {

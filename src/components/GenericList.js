@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import useAirtableData from "../hooks/useAirtableData"
 
-const GenericList = ({ baseName, initialViewName, title }) => {
+const GenericList = ({ baseName, initialViewName, title, searchQuery, showFavoritesOnly }) => {
 
     const [viewName, setViewName] = useState(initialViewName)
     const { data, loading } = useAirtableData(baseName, viewName)
@@ -30,6 +30,16 @@ const GenericList = ({ baseName, initialViewName, title }) => {
         return null
     }
 
+    const filteredData = data.filter((resource) => {
+        if (!searchQuery || searchQuery.trim() === "") {
+            return showFavoritesOnly ? resource.fields.Favorite : true;
+        } else {
+            const nameMatch = resource.fields.Name && resource.fields.Name.toLowerCase().includes(searchQuery.toLowerCase())
+            const websiteMatch = resource.fields.Website && resource.fields.Website.toLowerCase().includes(searchQuery.toLowerCase())
+            return nameMatch || websiteMatch
+        }
+    })
+
 
     return (
         <>
@@ -40,7 +50,7 @@ const GenericList = ({ baseName, initialViewName, title }) => {
                 {title}
             </h2>
             <ul className="mb-2">
-                {data.map((resource) => (
+                {filteredData.map((resource) => (
                     <li key={resource.id}>
                         <a
                             href={resource.fields.Website}

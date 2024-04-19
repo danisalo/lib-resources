@@ -6,18 +6,23 @@ import AllResources from './components/AllResources'
 import Footer from './components/Footer'
 import HelperPopUp from './components/HelperPopUp'
 
+import AllResources2 from './components/AllResources2'
+
 
 function App() {
 
   ReactGA.initialize(`${process.env.REACT_APP_GA_ID}`)
-  // ReactGA.pageview(window.location.pathname + window.location.search)
-  // ReactGA.send({ hitType: "pageview", page: window.location.pathname })
+  // fontawesome icons
 
   return (
     <>
-      <div className="container text-center">
+      <div className="container text-center mb-5">
         <Header />
-        <AllResources />
+        {/* with search bar implemented */}
+        {/* <AllResources /> */}
+
+        {/* adding view mode */}
+        <AllResources2 />
         <HelperPopUp />
       </div>
       <Footer />

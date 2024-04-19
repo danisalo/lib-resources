@@ -22,7 +22,7 @@ const HelperPopUp = () => {
     return (
         <>
             {isOpen && (
-                <div className='popup-modal'>
+                <div className='popup-modal mb-5'>
                     <div className='popup-modal-header'>
                         <h2>Thank you for visiting!</h2>
                         <svg
