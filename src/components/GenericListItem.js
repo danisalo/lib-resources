@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import useAirtableData from "../hooks/useAirtableData"
 
-const GenericList = ({ baseName, initialViewName, title, searchQuery, showFavoritesOnly }) => {
+const GenericListItem = ({ baseName, initialViewName, title, searchQuery, showFavoritesOnly }) => {
 
     const [viewName, setViewName] = useState(initialViewName)
     const { data, loading } = useAirtableData(baseName, viewName)
@@ -71,4 +71,4 @@ const GenericList = ({ baseName, initialViewName, title, searchQuery, showFavori
 }
 
 
-export default GenericList
+export default GenericListItem

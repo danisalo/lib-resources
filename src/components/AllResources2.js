@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+
 import GenericList from "./GenericList"
 import SearchBar from "./SearchBar"
 
@@ -201,6 +202,13 @@ const AllResources = () => {
                         baseName="Critics"
                         initialViewName="Grid - All by Name"
                         title="Blogs"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="ExperimentalPortfolios"
+                        initialViewName="Grid - All by Name"
+                        title="Experimental Portfolios"
                         searchQuery={searchQuery}
                         showFavoritesOnly={showFavoritesOnly}
                     />

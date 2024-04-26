@@ -7,6 +7,8 @@ import Footer from './components/Footer'
 import HelperPopUp from './components/HelperPopUp'
 
 import AllResources2 from './components/AllResources2'
+import AllResources3 from './components/AllResources3'
+
 
 
 function App() {
@@ -18,11 +20,10 @@ function App() {
     <>
       <div className="container text-center mb-5">
         <Header />
-        {/* with search bar implemented */}
         {/* <AllResources /> */}
-
         {/* adding view mode */}
-        <AllResources2 />
+        {/* <AllResources2 /> */}
+        <AllResources3 />
         <HelperPopUp />
       </div>
       <Footer />
