@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import useAirtableData from "../hooks/useAirtableData"
 
-const GenericListItem = ({ baseName, initialViewName, title, searchQuery, showFavoritesOnly }) => {
+const GenericGridItem = ({ baseName, initialViewName, title, searchQuery, showFavoritesOnly }) => {
 
     const [viewName, setViewName] = useState(initialViewName)
     const { data, loading } = useAirtableData(baseName, viewName)
@@ -51,25 +51,28 @@ const GenericListItem = ({ baseName, initialViewName, title, searchQuery, showFa
             </h3>
             <ul className="mb-2">
                 {filteredData.map((resource) => (
-                    <li key={resource.id}>
+                    <li key={resource.id}
+                        className="mb-2">
                         <a
-                            className="list-item"
                             href={resource.fields.Website}
                             target="_blank"
                             rel="noopener noreferrer"
                             title={resource.fields.Description}
                         >
-                            {resource.fields.Name && <span>{resource.fields.Name} </span>}
-                            {resource.fields.From && <span>{resource.fields.From} </span>}
-                            {resource.fields.Based && <span>{resource.fields.Based} </span>}
-                            {addStar(resource)}
+                            <div className="grid-item">
+                                {resource.fields.Name && <span>{resource.fields.Name} </span>}
+                                {addStar(resource)}
+                                {resource.fields.From && <span>{resource.fields.From} </span>}
+                                {resource.fields.Based && <span>{resource.fields.Based} </span>}
+                                <p>{resource.fields.Description}</p>
+                            </div>
                         </a>
                     </li>
                 ))}
-            </ul>
+            </ul >
         </>
     )
 }
 
 
-export default GenericListItem
+export default GenericGridItem

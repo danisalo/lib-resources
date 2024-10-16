@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 import HelperPopUp from './components/HelperPopUp'
 
 import AllResources2 from './components/AllResources2'
-import AllResources3 from './components/AllResources3'
+
 
 
 
@@ -22,8 +22,7 @@ function App() {
         <Header />
         {/* <AllResources /> */}
         {/* adding view mode */}
-        {/* <AllResources2 /> */}
-        <AllResources3 />
+        <AllResources2 />
         <HelperPopUp />
       </div>
       <Footer />

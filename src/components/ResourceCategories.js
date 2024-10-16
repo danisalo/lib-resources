@@ -3,8 +3,9 @@ import { useMediaQuery } from "react-responsive"
 
 import CollapsibleList from "./CollapsibleList"
 import GenericListItem from "./GenericListItem"
+import GenericGridItem from "./GenericGridItem"
 
-const ResourceCategories = ({ resourceCategories, searchQuery, showFavoritesOnly }) => {
+const ResourceCategories = ({ resourceCategories, searchQuery, showFavoritesOnly, viewMode }) => {
     const isMobile = useMediaQuery({ maxWidth: 767 })
     const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 })
     const isDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1823 })
@@ -99,20 +100,40 @@ const ResourceCategories = ({ resourceCategories, searchQuery, showFavoritesOnly
                     ))
                 )}
                 {(isDesktop || isBigScreen) && (
-                    categoryColumns.map((column, columnIndex) => (
-                        <div key={columnIndex} className="col-2 px-1 text-start">
-                            {column.map((category) => (
-                                <GenericListItem
-                                    key={category.key}
-                                    baseName={category.baseName}
-                                    initialViewName="Grid - All by Name"
-                                    title={category.title}
-                                    searchQuery={searchQuery}
-                                    showFavoritesOnly={showFavoritesOnly}
-                                />
-                            ))}
-                        </div>
-                    ))
+                    <>
+                        {(viewMode === 'list') &&
+                            categoryColumns.map((column, columnIndex) => (
+                                <div key={columnIndex} className="col-2 px-1 text-start">
+                                    {column.map((category) => (
+                                        <GenericListItem
+                                            key={category.key}
+                                            baseName={category.baseName}
+                                            initialViewName="Grid - All by Name"
+                                            title={category.title}
+                                            searchQuery={searchQuery}
+                                            showFavoritesOnly={showFavoritesOnly}
+                                        />
+                                    ))}
+                                </div>
+                            ))
+                        }
+                        {(viewMode === 'grid') &&
+                            categoryColumns.map((column, columnIndex) => (
+                                <div key={columnIndex} className="col-2 px-1 text-start">
+                                    {column.map((category) => (
+                                        <GenericGridItem
+                                            key={category.key}
+                                            baseName={category.baseName}
+                                            initialViewName="Grid - All by Name"
+                                            title={category.title}
+                                            searchQuery={searchQuery}
+                                            showFavoritesOnly={showFavoritesOnly}
+                                        />
+                                    ))}
+                                </div>
+                            ))
+                        }
+                    </>
                 )}
             </div>
         </>

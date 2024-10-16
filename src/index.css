@@ -98,23 +98,6 @@ li {
   list-style-position: outside;
 }
 
-/* Links in Lists */
-ul li a {
-  color: var(--bs-body-color);
-  text-decoration: underline;
-  font-size: 1rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-ul li a:hover {
-  font-weight: 600;
-  background-color: #e9ecef;
-  padding: 0.25rem 0.5rem;
-  transition: 0.25s ease-in-out;
-  border-radius: 0.5rem;
-}
-
 /* Footer */
 .footer-bg {
   background-color: var(--bs-gray-200);
@@ -276,4 +259,56 @@ body.modal-open {
 /* Miscellaneous */
 .collapsible-list-icon {
   vertical-align: middle;
+}
+
+/* List item */
+/* Links in Lists */
+.list-item {
+  color: var(--bs-body-color);
+  text-decoration: underline;
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-item:hover {
+  font-weight: 600;
+  background-color: #e9ecef;
+  padding: 0.25rem 0.5rem;
+  transition: 0.25s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+/* Grid item */
+
+.grid-item {
+  background-color: white;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: 1rem;
+  padding: 1rem 1rem;
+}
+
+.grid-item span {
+  color: var(--bs-body-color);
+  text-decoration: underline;
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid-item p {
+  color: var(--bs-body-color);
+  text-decoration: none;
+  font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid-item:hover span {
+  font-weight: 600;
+}
+
+.grid-item:hover {
+  background-color: #e9ecef;
+  transition: 0.25s ease-in-out;
 }

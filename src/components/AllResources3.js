@@ -1,14 +1,9 @@
 import React, { useState } from "react"
-import { useMediaQuery } from "react-responsive"
 
+import GenericList from "./GenericList"
 import SearchBar from "./SearchBar"
-import ResourceCategories from "./ResourceCategories"
 
 const AllResources = () => {
-    const isMobile = useMediaQuery({ maxWidth: 767 })
-    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 })
-    const isDesktop = useMediaQuery({ minWidth: 1024, maxWidth: 1823 })
-    const isBigScreen = useMediaQuery({ minWidth: 1824 })
 
     const [searchQuery, setSearchQuery] = useState("")
     const [showFavoritesOnly, setShowFavoritesOnly] = useState(false)
@@ -30,175 +25,263 @@ const AllResources = () => {
         setViewMode((prevMode) => (prevMode === "list" ? "grid" : "list"));
     }
 
-    const resourceCategories = [
-        {
-            key: 1,
-            baseName: "SearchEnginesConventional",
-            title: "Search Engines Conventional",
-        },
-        {
-            key: 2,
-            baseName: "SearchEnginesAI",
-            title: "Search Engines AI",
-        },
-        {
-            key: 3,
-            baseName: "SearchEnginesMedia",
-            title: "Search Engines Media",
-        },
-        {
-            key: 4,
-            baseName: "SearchEnginesInt",
-            title: "Search Engines Int",
-        },
-        {
-            key: 5,
-            baseName: "ImageGenerators",
-            title: "Image Generators",
-        },
-        {
-            key: 6,
-            baseName: "DesignStudios",
-            title: "Design Studios",
-        },
-        {
-            key: 7,
-            baseName: "Designers",
-            title: "Designers",
-        },
-        {
-            key: 8,
-            baseName: "TypeFoundries",
-            title: "Type Foundries",
-        },
-        {
-            key: 9,
-            baseName: "TypeInspo",
-            title: "Type Inspo",
-        },
-        {
-            key: 10,
-            baseName: "TypeMarkets",
-            title: "Type Markets",
-        },
-        {
-            key: 11,
-            baseName: "Indexing",
-            title: "Indexing",
-        },
-        {
-            key: 12,
-            baseName: "BuildSites",
-            title: "Build Sites",
-        },
-        {
-            key: 13,
-            baseName: "FileTransfering",
-            title: "File Transfering",
-        },
-        {
-            key: 14,
-            baseName: "Workflow",
-            title: "Workflow",
-        },
-        {
-            key: 15,
-            baseName: "WebPractices",
-            title: "Web Practices",
-        },
-        {
-            key: 16,
-            baseName: "JSLibraries",
-            title: "Creative JS",
-        },
-        {
-            key: 17,
-            baseName: "CSSMix",
-            title: "CSS Mix",
-        },
-        {
-            key: 18,
-            baseName: "Critics",
-            title: "Blogs",
-        },
-        {
-            key: 19,
-            baseName: "ExperimentalPortfolios",
-            title: "Experimental Portfolios",
-        },
-        {
-            key: 20,
-            baseName: "SiteAwards",
-            title: "Site Awards",
-        },
-        {
-            key: 21,
-            baseName: "UIInspo",
-            title: "UI Inspo",
-        },
-        {
-            key: 22,
-            baseName: "FreeAssets",
-            title: "Free Assets",
-        },
-        {
-            key: 23,
-            baseName: "TypeGames",
-            title: "Type Games",
-        },
-        {
-            key: 24,
-            baseName: "MiscUtils",
-            title: "Misc Utils",
-        },
-        {
-            key: 25,
-            baseName: "MiscMisc",
-            title: "Misc Misc",
-        },
-        {
-            key: 26,
-            baseName: "Extensions",
-            title: "Extensions",
-        },
-        {
-            key: 27,
-            baseName: "Experimental",
-            title: "Experimental",
-        },
-        {
-            key: 28,
-            baseName: "Random",
-            title: "Random",
-        }
-    ]
 
     return (
         <>
-            {(isTablet || isDesktop || isBigScreen) && (
-                <>
-                    <div className="row align-items-center mb-4">
-                        <div className="col-sm-5 col-lg-4 px-0">
-                            {/* Search bar */}
-                            <SearchBar onSearch={handleSearch} />
-                        </div>
-                        <div className="col-md-auto px-0">
-                            <input
-                                id="favoritesInput"
-                                type="button"
-                                value="Favorites"
-                                className={`toggle-button ${showFavoritesOnly ? 'active' : ''}`}
-                                onClick={handleToggleFavorites}
-                            />
-                        </div >
-                    </div >
-                </>
-            )}
-            <ResourceCategories
-                resourceCategories={resourceCategories}
-                searchQuery={searchQuery}
-                showFavoritesOnly={showFavoritesOnly}
-            />
+            <div className="row align-items-center mb-4">
+                <div className="col-sm-5 col-lg-4 px-0">
+                    {/* Search bar */}
+                    <SearchBar onSearch={handleSearch} />
+                </div>
+                <div className="col-md-auto px-0">
+                    <input
+                        id="favoritesInput"
+                        type="button"
+                        value="Favorites"
+                        className={`toggle-button ${showFavoritesOnly ? 'active' : ''}`}
+                        onClick={handleToggleFavorites}
+                    />
+                </div >
+                {/* <button onClick={toggleViewMode}>
+                    {viewMode === "list" ? "Grid" : "List"}
+                </button> */}
+            </div >
+            <div className="row">
+                {/* Search Engines */}
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
+                    <GenericList
+                        baseName="SearchEnginesConventional"
+                        initialViewName="Grid - All by Name"
+                        title="Search Engines (Conventional)"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="SearchEnginesAI"
+                        initialViewName="Grid - All by Name"
+                        title="Search Engines (AI)"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="SearchEnginesMedia"
+                        initialViewName="Grid - All by Name"
+                        title="Search Engines (Media)"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="SearchEnginesInt"
+                        initialViewName="Grid - All by Name"
+                        title="Search Engines (International)"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="ImageGenerators"
+                        initialViewName="Grid - All by Name"
+                        title="Image Generators (AI)"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="FindWork"
+                        initialViewName="Grid - All by Name"
+                        title="Find Work"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                </div>
+
+                {/* Design */}
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
+                    <GenericList
+                        baseName="DesignStudios"
+                        initialViewName="Grid - All by Name"
+                        title="Design Studios"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="Designers"
+                        initialViewName="Grid - All by Name"
+                        title="Designers"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                </div>
+
+                {/* Typography */}
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
+                    <GenericList
+                        baseName="TypeFoundries"
+                        initialViewName="Grid - All by Name"
+                        title="Type Foundries"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="TypeInspo"
+                        initialViewName="Grid - All by Name"
+                        title="Type Inspo"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="TypeMarkets"
+                        initialViewName="Grid - All by Name"
+                        title="Type Marketplaces"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                </div>
+
+                {/* Indexing, Building Sites, File Transfering, Workflow & Guidelines*/}
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
+                    {/* <GenericList
+                        baseName="CoolSites"
+                        initialViewName="Grid - All by Name"
+                        title="Cool Sites"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    /> */}
+                    <GenericList
+                        baseName="Indexing"
+                        initialViewName="Grid - All by Name"
+                        title="Indexing"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="BuildSites"
+                        initialViewName="Grid - All by Name"
+                        title="Build Sites"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="FileTransfering"
+                        initialViewName="Grid - All by Name"
+                        title="File Transfering"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="Workflow"
+                        initialViewName="Grid - All by Name"
+                        title="Workflow"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="WebPractices"
+                        initialViewName="Grid - All by Name"
+                        title="Web Practices"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="JSLibraries"
+                        initialViewName="Grid - All by Name"
+                        title="Creative JS Libraries"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="CSSMix"
+                        initialViewName="Grid - All by Name"
+                        title="CSS Mix"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                </div>
+
+                {/* Inspo, Libraries & Other Resources */}
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
+                    <GenericList
+                        baseName="Critics"
+                        initialViewName="Grid - All by Name"
+                        title="Blogs"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="ExperimentalPortfolios"
+                        initialViewName="Grid - All by Name"
+                        title="Experimental Portfolios"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="SiteAwards"
+                        initialViewName="Grid - All by Name"
+                        title="Site Awards"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="UIInspo"
+                        initialViewName="Grid - All by Name"
+                        title="UI Inspo"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="FreeAssets"
+                        initialViewName="Grid - All by Name"
+                        title="Free Assets"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="TypeGames"
+                        initialViewName="Grid - All by Name"
+                        title="Type Games"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                </div>
+
+                {/* Misc */}
+                <div className="col-sm-3 col-lg-2 px-1 text-start">
+                    <GenericList
+                        baseName="MiscUtils"
+                        initialViewName="Grid - All by Name"
+                        title="Misc Utils"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="MiscMisc"
+                        initialViewName="Grid - All by Name"
+                        title="Misc Misc"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="Extensions"
+                        initialViewName="Grid - All by Name"
+                        title="Extensions"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="Experimental"
+                        initialViewName="Grid - All by Name"
+                        title="Experimental"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                    <GenericList
+                        baseName="Random"
+                        initialViewName="Grid - All by Name"
+                        title="Random"
+                        searchQuery={searchQuery}
+                        showFavoritesOnly={showFavoritesOnly}
+                    />
+                </div>
+
+            </div>
         </>
     )
 }
